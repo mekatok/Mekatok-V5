@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.guokay.mekatok</groupId>
+	<artifactId>mekatok</artifactId>
+	<version>2022.07</version>
+
+	<packaging>pom</packaging>
+	<inceptionYear>2022</inceptionYear>
+	<description>Mekatok框架微服务版本</description>
+
+	<properties>
+		<!-- build config -->
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+		<!-- platform config -->
+		<mekatok.version>${project.version}</mekatok.version>
+		<!-- lib config -->
+		<jna.version>5.12.1</jna.version>
+		<oshi.version>6.2.2</oshi.version>
+		<druid.version>1.2.11</druid.version>
+		<redisson.version>3.17.5</redisson.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<!-- version manager config -->
+		<spring-boot.version>2.6.3</spring-boot.version>
+		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
+	</properties>
+
+	<modules>
+		<module>commons</module>
+		<module>husky</module>
+		<module>jdbc</module>
+		<module>redis</module>
+		<module>message</module>
+		<module>openapi</module>
+		<module>microservice</module>
+		<module>webflux</module>
+		<module>websocket</module>
+		<module>graph</module>
+		<module>application/auth</module>
+		<module>application/map</module>
+		<module>application/oss</module>
+		<module>application/user</module>
+		<module>application/gateway</module>
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-commons</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-husky</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-jdbc</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-redis</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-message</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-openapi</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-microservice</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-webflux</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-websocket</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.guokay.mekatok</groupId>
+				<artifactId>mekatok-component-graph</artifactId>
+				<version>${mekatok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
